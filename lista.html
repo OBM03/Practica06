@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="peticiones.js"></script>
+    <title>Practica 6</title>
+</head>
+<body>
+    <div id="titulo">
+        <center>
+            <h1>Burgueño Macias Oscar</h1>
+            <h2>2019030267</h2>
+        </center>
+    </div>
+
+    <h3>Practica 06</h3>
+
+    <p class="font-weight-light" style="text-align: justify;">Se pide diseñar la siguiente pagina web para realizar dos peticiones por el objeto fetch o axios
+        Donde cada una de ellas debe ser sincronicas.
+        Petición 1: http://201.140.116.237/services/tipo.php
+         Regresa : Una arrglo de objetos JSON "tipo": "4","descripcion": "Contado"
+        Petición 2: http://201.140.116.237/services/ventas.php Regresa : Una arrglo de objetos JSON :
+        {
+         "folio": "1",
+         "tipo": "5",
+         "precio": "640",
+         "descuento": "0",
+         "total": "640",
+         "fechapago": "2004-02-11",
+         "giro": "AUTOSERVICIO,VTA.VINOS,LICORES,FARM.SODA"
+        }</p>
+
+    <div id="espaciado">
+        Tipo : <select name="tipo" id="tipo" onchange="cargarTablaVentas()">
+    </select>
+    </div>
+
+    <table id="ventas" class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Folio</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descuento</th>
+                <th scope="col">Total</th>
+                <th scope="col">Fecha Pago</th>
+                <th scope="col">Giro</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo"></tbody>
+    </table>
+
+    <center>
+        <button onclick="borrar()" class="btn btn-primary mb-2">Limpiar</button> 
+    </center>
+</body>
+
+</html>
